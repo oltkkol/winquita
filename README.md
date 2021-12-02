@@ -6,6 +6,7 @@ VB.NET
 
 ## Help File & List of used formulas:
 Available at printed or PDF form via: http://www.ram-verlag.eu/books-e-books/studies-in-quantitative-linguistics/
+
 Czech manual: https://theses.cz/id/fz87uj/thesis.pdf
 
 ## Warrants
