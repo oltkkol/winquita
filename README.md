@@ -1,5 +1,5 @@
 # QUITA -- Quantitative Index Text Analyzer (QITA) 2014
-The original (see warrants below) desktop version of QUITA software as previously hosted at https://code.google.com/archive/p/oltk (this site cannot be edited since 2016 as it the platform is turned off by Google, links are broken, see https://code.google.com/archive/).
+The original (see warrants below) desktop version of QUITA software as previously hosted at https://code.google.com/archive/p/oltk (this site cannot be edited since 2016 as the platform has been turned off by Google, links are broken and cannot be changed, see https://code.google.com/archive/).
 
 ## Language and compiler
 VB.NET
