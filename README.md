@@ -14,7 +14,7 @@ Manual in Czech:
 https://theses.cz/id/fz87uj/thesis.pdf
 
 ## Warrants
-No warants for the code, the calculations and/or formulas are given. Use 'as is'. Based on the concemporary knowledge, some statistical tests, calculations may be deprecated and the default tokenizer may be unsuitable for some tasks as it is based on the .NET RegEx engine. 
+No warants for the code, the calculations and/or formulas are given. Use 'as is'. Based on the contemporary knowledge, some of the used statistical tests, calculations may be deprecated; the default tokenizer is based on the .NET RegEx engine.
 
 ## Older version
 Binaries for the older version 11.90 with an installer are downloadable from OSU website:
