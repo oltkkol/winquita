@@ -6,9 +6,11 @@ VB.NET
 
 ## Help File & List of used formulas:
 All used formulas, examples and manual calculations:
+
 http://www.ram-verlag.eu/books-e-books/studies-in-quantitative-linguistics/
 
 Manual in Czech:
+
 https://theses.cz/id/fz87uj/thesis.pdf
 
 ## Warrants
