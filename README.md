@@ -18,4 +18,6 @@ No warants for the code, the calculations and/or formulas are given! Based on th
 https://korpus.cz/quitaup/ and https://www.quitaonline.com/ .
 
 ## Older version
-Binaries for the older version 11.90 with an installer are downloadable from OSU website: https://kcj.osu.cz/wp-content/uploads/2018/06/QUITA_Setup_1190.zip .
+Binaries for the older version 11.90 with an installer are downloadable from OSU website:
+
+https://kcj.osu.cz/wp-content/uploads/2018/06/QUITA_Setup_1190.zip .
