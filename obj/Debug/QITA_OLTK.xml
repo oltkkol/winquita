@@ -1,0 +1,1744 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+QITA_OLTK
+</name>
+</assembly>
+<members>
+<member name="M:QITA_OLTK.QITAGenericPipeMorphoAnalyzer.CreatePipeWithExecutable(System.String,System.String,System.Text.Encoding,System.Exception@)">
+	<summary>
+ Initializes pipe communication with target executable file.
+ </summary>
+	<param name="sExecutablePath">Analyzer executable path.</param>
+	<param name="sAnalyzerCommands">Additional commands and arguments for executing.</param>
+	<param name="encoding">Encoding of input/ouput data.</param>
+	<param name="outError">Output: Exception if any.</param>
+	<returns>TRUE if pipe has been succesfully established.</returns>
+	<remarks>Working directory is set to executable path directory.</remarks>
+</member><member name="M:QITA_OLTK.QITAGenericPipeMorphoAnalyzer.CreatePipeWithScript(System.String,System.String,System.Text.Encoding,System.Exception@)">
+	<summary>
+ Initializes pipe communication with target script.
+ </summary>
+	<param name="sScriptPath">Full path to script destination.</param>
+	<param name="sCommands">Command arguments for script.</param>
+	<param name="encoding">Encoding of input/output data.</param>
+	<param name="outError">Output: Exception if any.</param>
+	<returns>TRUE if pipe has been succesfully established.</returns>
+	<remarks>Working directory is set to script path directory.</remarks>
+</member><member name="M:QITA_OLTK.QITAGenericPipeMorphoAnalyzer.AskAnalyzer(System.String)">
+	<summary>
+ Function asks Lemmatizer for given question (passes command to analyzer and reads response).
+ This function uses internal query-result cache.
+ </summary>
+	<param name="sQuestion">Command or question for analyzer.</param>
+	<returns>Analyzer response.</returns>
+</member><member name="M:QITA_OLTK.QITAGenericPipeMorphoAnalyzer.LemmatizeWord(System.String)">
+	<summary>
+ Inherited. This function MUST be overrided by using class.
+ </summary>
+	<param name="sWord">Ignored.</param>
+	<returns>Nothing.</returns>
+</member><member name="M:QITA_OLTK.QITAGenericPipeMorphoAnalyzer.GetWordType(System.String)">
+	<summary>
+ Inherited. This function MUST be overrided by using class.
+ </summary>
+	<param name="sWord">Ignored.</param>
+	<returns>WordType.MUST_OVERRIDE value.</returns>
+</member><member name="M:QITA_OLTK.QITAGenericPipeMorphoAnalyzer.IsWordMeaningful(System.String)">
+	<summary>
+ Inherited. This function MUST be overrided by using class.
+ </summary>
+	<param name="sWord">Ignored.</param>
+	<returns>Boolean.</returns>
+</member><member name="T:QITA_OLTK.QITAGenericPipeMorphoAnalyzer">
+	<summary>
+ Class providing access to pipe-based communication with given executable file or script.
+ Limitted queries with results are localy cached.
+ </summary>
+</member><member name="T:QITA_OLTK.TabControlEx">
+	<summary>
+ TabControl extension with close buttons.
+ </summary>
+	<remarks>TabPage Tag property is used for "noClose" string remarking tab page without close buttons.</remarks>
+</member><member name="M:QITA_OLTK.UCChart.IsDataSample">
+	<summary>
+ Retreives user settings whether data is sample population or entire population
+ </summary>
+	<returns>TRUE on Sample population. FALSE on entire population.</returns>
+</member><member name="P:QITA_OLTK.UCResults.DataSourceContainer">
+	<summary>
+ Returns datagrid/listview/... containing result data.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAText.TextFile">
+	<summary>
+ File path.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAText.AssignedLemmatizer">
+	<summary>
+ Gets or sets Lemmatizer used for lemmatizing text.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAText.AssignedPOSTagger">
+	<summary>
+ Gets or sets POS Tagger used for tagging text.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAText.AssignedTokenizer">
+	<summary>
+ Gets or sets Tokenizer used for tokenizing text.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.InitializeBeforeComputing">
+	<summary>
+ Sub called before computing indexes on text.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.InitializeAfterPostProcessing">
+	<summary>
+ Sub called after Text is Post-Processed (eg. reducing text size by post-processor might
+ require recalculating precalculated data).
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.AddResult(QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Adds a result to list of computed results available for enumeration and caching.
+ </summary>
+	<param name="result">Result to add.</param>
+	<returns>Result.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetResultByIndex(System.Type@)">
+	<summary>
+ Retreives result of given index type from already computed results.
+ </summary>
+	<param name="index">Index type.</param>
+	<returns>Index result.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetResultByIndex``1">
+	<summary>
+ Retreives result of given index type from already computed results.
+ </summary>
+	<returns>Index result.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetResultByIndex(System.String@)">
+	<summary>
+ Retreives result of given index name from already computed results.
+ </summary>
+	<returns>Result.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.IsIndexComputedAlready(QITA_OLTK.QITAInterfaces.IQITAIndex@,QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Retreives whether index of given type has been already computed for Text.
+ </summary>
+	<param name="index">Index type.</param>
+	<param name="outResult">Retreived result</param>
+	<returns>TRUE if appropriate result found.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.ComputeIndex(QITA_OLTK.QITAInterfaces.IQITAIndex@)">
+	<summary>
+ Computes given index for Text.
+ </summary>
+	<param name="index">Instance of Index class.</param>
+	<returns>Computation Result.</returns>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAText.ReadyResults">
+	<summary>
+ List of computed results for Text. This list is used by IsIndexComputedAlready function and GetResultByIndex.
+ </summary>
+	<returns>List of results.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.LoadFromFile(System.String,System.String@)">
+	<summary>
+ Loads Text-Data from given text file.
+ </summary>
+	<param name="sFile">File path.</param>
+	<param name="sOutError">Output string with error description.</param>
+	<returns>True if data succesfully loaded.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.ReLoadFile(System.String)">
+	<summary>
+ Reloads file with given encoding.
+ </summary>
+	<param name="sEncodingName">File encoding.</param>
+	<returns>TRUE if success.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.ReLoadFile">
+	<summary>
+ Reloads file with last used encoding.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetPreview">
+	<summary>
+ Retreives short sample of text.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetDefaultEncoding">
+	<summary>
+ Retreives default encoding used by LoadFromFile function.
+ </summary>
+	<returns>Name of encoding.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.Tokens">
+	<summary>
+ Returns zero-based array of text tokens.
+ </summary>
+	<returns>Zero-based array of text tokens.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.Types">
+	<summary>
+ Returns zero-based array of text types.
+ </summary>
+	<returns>Zero-based array of text types.</returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.N">
+	<summary>
+ Retreives Token count.
+ </summary>
+	<returns>Token Count.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.V">
+	<summary>
+ Retreives Type Count.
+ </summary>
+	<returns>Type Count.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetTextTable">
+	<summary>
+ Creates basic text table containing informations for each word:
+  - Word position in text.
+  - Word frequency.
+  - Word.
+  - Word rank.
+  - Word averaged rank.
+  - Word lemma (optional).
+  - Word type (optional).
+ </summary>
+	<returns>One-indexed table containing all informations above.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetWordFrequencyTable">
+	<summary>
+ Creates Frequency analyzis of text.
+ </summary>
+	<returns>Returns [word]-&gt;[frequency] index table.</returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetFrequencyPositiveArray">
+	<summary>
+ Creates Frequency analyzis of text.
+ </summary>
+	<returns>Returns [rank]-&gt;[frequency] one-based array.</returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.f(System.Int32)">
+	<summary>
+ Retreives frequency at given rank.
+ </summary>
+	<returns>Frequency.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetFrequencyToAveragedRankTable">
+	<summary>
+ Creates Frequency to Rank-Averaged lookup table: [frequency]-&gt;[averaged rank that belongs to frequency].
+ </summary>
+	<returns>Lookup table: [frequency]-&gt;[its averaged rank].</returns>
+	<remarks>Averaged-indexes are based on one-based (positive) index table.</remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.FrequencyToRank(System.Int32)">
+	<summary>
+ Retreives (averaged) rank for given frequency.
+ </summary>
+	<remarks>Ranks are averaged.</remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.GetWordOrLemmaLabel">
+	<summary>
+ Retreives label for tokens: "lemma" whether lemmatizer is set, "token" otherwise.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAText.ClearCache">
+	<summary>
+ Clears cache.
+ </summary>
+	<returns>TRUE when Cache has been cleared.</returns>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITAText">
+	<summary>
+ Provides interface for general TEXT class used in QITA.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAResult.IndexReference">
+	<summary>
+ Gets reference to index class.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAResult.TextReference">
+	<summary>
+ Gets reference to text class.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAResult.ResultName">
+	<summary>
+ Gets name of index or other source of result.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAResult.IsSecondary">
+	<summary>
+ Gets whether the result is not important for showin in results table.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAResult.IsComplex">
+	<summary>
+ Gets whether the result is complex and needs complex displaying (eg. table, array, ...)
+ or simple (number, string, ...).
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITAResult">
+	<summary>
+ Provides interface for results used by indexes and other calculations in QITA.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IndexName">
+	<summary>
+ Gets name of index.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IndexShortName">
+	<summary>
+ Gets short name of index or it's abbrevation.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IndexAuthor">
+	<summary>
+ Gets author of index.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IndexDescription">
+	<summary>
+ Gets author's description of Index.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IndexComments">
+	<summary>
+ Gets author's comments for Index.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IndexGroup">
+	<summary>
+ Gets general group for Index.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.HasComplexResults">
+	<summary>
+ Gets whether the result is complex (eg. table, array, ...) or simple (number, string, ...).
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.HasComparableResults">
+	<summary>
+ Gets whether this index has comparable results or not.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.IsSecondary">
+	<summary>
+ Gets whether the index has results that are not important for showing in results table.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAIndex.Requisities">
+	<summary>
+ Gets requisities for calculating this index.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAIndex.TestRequisitiesForText(QITA_OLTK.QITAInterfaces.IQITAText@)">
+	<summary>
+ Tests whether Text has assigned all neccessary properties for calculating index.
+ </summary>
+	<param name="Text">Text to be tested.</param>
+	<returns>TRUE when index can be calculated, otherwise FALSE is returned.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAIndex.Calculate(QITA_OLTK.QITAInterfaces.IQITAText@)">
+	<summary>
+ Applies calculation procedure of index on given text.
+ </summary>
+	<param name="TextData">Text for applying index.</param>
+	<returns>Index result.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAIndex.CalculateDiffusion(QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Calculates VAR(...) diffusion for statistical purposes.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAIndex.CompareResults(QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Compares two results of index.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITAIndex">
+	<summary>
+ Provides interface for indexes or other calculation classes in QITA.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.CheckDependencies(System.String@)">
+	<summary>
+ Checks whether this morphological analyzer has all needed dependencies and is
+ ready to be used.
+ </summary>
+	<param name="outStatus">[OUTPUT] Status of dependencies.</param>
+	<returns>TRUE when morphoanalyzer is ready to use, otherwise FALSE is returned.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.Initialize">
+	<summary>
+ Initializes lemmatizer before using. This method is called before
+ any of lemmatizer functions usage. Please use this method for initializing
+ lemmatizer rather than class constructor which has to serve for filling
+ lemmatizer properties.
+ </summary>
+	<returns>TRUE if initialization has been succesfull.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.TokenizeText(System.String)">
+	<summary>
+ Returns tokens of given text.
+ </summary>
+	<param name="sText">Text to tokenize.</param>
+	<returns>Token array.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.LemmatizeWord(System.String)">
+	<summary>
+ Retreives lemma for given word.
+ </summary>
+	<param name="sWord">Word.</param>
+	<returns>Word in lemma form.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.GetWordType(System.String)">
+	<summary>
+ Retreives word type (Part of Speech) of give word.
+ </summary>
+	<param name="sWord">Word.</param>
+	<returns>Word type.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.IsWordMeaningful(System.String)">
+	<summary>
+ Tests if word is meaningful.
+ </summary>
+	<param name="sWord">Word to be tested.</param>
+	<returns>TRUE if word has meaning.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer.IsLemmaUnknown(System.String)">
+	<summary>
+ Tests whether given lemma is marked as unknown.
+ </summary>
+	<param name="sLemma">Lemma to test.</param>
+	<returns>TRUE when lemma is marked as unknown.</returns>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITAMorphologyAnalyzer">
+	<summary>
+ Provides interface for morphology analyzers like lemmatizers, pos taggers etc.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITATextPostProcessors.InitializePostProcessor">
+	<summary>
+ Initializes post processor. Called before text computation is set up.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITATextPostProcessors.PostProcess(QITA_OLTK.QITAInterfaces.IQITAText@)">
+	<summary>
+ Destructively modifies data in given IQITAText by given post processing procedure.
+ </summary>
+	<param name="text">IQITAText to modify.</param>
+	<returns></returns>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITATextPostProcessors">
+	<summary>
+ Provides interface for text post processing like n-gram creators etc.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAProject.NewProject(System.String)">
+	<summary>
+ Initializes new project.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAProject.GetResultsOfIndex(System.String)">
+	<summary>
+ Returns all results of given index that have been computed for the texts in this project.
+ </summary>
+	<param name="sIndexName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaces.IQITAProject.Calculate">
+	<summary>
+ Calculates all data in project.
+ </summary>
+	<returns>TRUE when calculation is succesful, else FALSE.</returns>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAProject.Texts">
+	<summary>
+ Retreives list of texts used in this project.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAProject.SelectedTexts">
+	<summary>
+ Retreives list of "selected" texts.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaces.IQITAProject.ComputedIndexes">
+	<summary>
+ Retreives list of classes of computed indexes for this project.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITAProject">
+	<summary>
+ Provides interface for QITA projects.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaces.IQITADataType">
+	<summary>
+ Provides interface for data types used in QITA.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAResultBase">
+	<summary>
+ Implements IQITAResult interface and is dedicated to be inherited.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.CalculateDiffusion(QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Calculates index diffusion value of given result value.
+ </summary>
+	<param name="result">Result value to be recalculated.</param>
+	<returns>Diffusion value when overriden, otherwise result value.</returns>
+	<remarks>Indexes allowing calculating Diffusion MUST OVERRIDE this method, otherwise same result is returned.</remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.CompareResults(QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Compares two results.
+ </summary>
+	<param name="result1">Result 1.</param>
+	<param name="result2">Result 2.</param>
+	<returns>Comparsion result when overriden, otherwise number distance is returned.</returns>
+	<remarks>Indexes allowing calculating Comparation MUST OVERRIDE this method, otherwise number distance is returned.</remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetIndexName(System.String)">
+	<summary>
+ Sets name of index.
+ </summary>
+	<param name="sIndexName">Name.</param>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetIndexAuthor(System.String)">
+	<summary>
+ Author of index + bibliography.
+ </summary>
+	<param name="sIndexAuthor">Informations.</param>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetIndexDescription(System.String)">
+	<summary>
+ Description of index.
+ </summary>
+	<param name="sDescription">Description.</param>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetIndexComments(System.String)">
+	<summary>
+ Any comments for index.
+ </summary>
+	<param name="sComments">Comments.</param>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetHasComplexResults(System.Boolean)">
+	<summary>
+ Sets whether the result of this index is complex (array, table, ...), or simple (string, number, ...).
+ Defaultly set to FALSE.
+ </summary>
+	<param name="b">True when complex. False when simple.</param>
+	<remarks>Default value: FALSE.</remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetHasComparableResults(System.Boolean)">
+	<summary>
+ Sets whether results of this index has comparable results.
+ </summary>
+	<remarks>Default value: FALSE.</remarks>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetIndexGroup(System.String)">
+	<summary>
+ Sets general group that Index belongs in, eg. Vocabulary Richness, information index, ...
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SetIsSecondary(System.Boolean)">
+	<summary>
+ Sets whether this index is (only) supposed to assist other indexes.
+ Defaultly set to FALSE. 
+ </summary>
+	<param name="b">True if secondary.</param>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumFrequenciesAboveHPoint(QITA_OLTK.QITAInterfaces.IQITAText@)">
+	<summary>
+ Counts total sum of all frequencies above h-Point.
+ </summary>
+	<param name="TextData">Text.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumFrequenciesAboveHPointWithAveragedRanks(QITA_OLTK.QITAInterfaces.IQITAText@,System.Double)">
+	<summary>
+ Counts total sum of all frequencies above h-Point, ranks are averaged.
+ </summary>
+	<param name="TextData">Text.</param>
+	<param name="hPoint">Specification of hPoint.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumFrequenciesAboveHPointWithAveragedRanks(QITA_OLTK.QITAInterfaces.IQITAText@)">
+	<summary>
+ Counts total sum of all frequencies above h-Point, ranks are averaged.
+ </summary>
+	<param name="TextData">Text.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumAllFrequencies(QITA_OLTK.QITAInterfaces.IQITAText@,System.Double)">
+	<summary>
+ Counts total sum of all frequencies of Text powered by iPowerFreqTo.
+ </summary>
+	<param name="TextData">Text.</param>
+	<param name="iPowerFreqTo">Powers frequency to given exponent before adding to sum.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumAllFrequencies(QITA_OLTK.QITAInterfaces.IQITAText@,System.Int32,System.Func{System.Double,System.Int32,System.Double}@)">
+	<summary>
+ Counts total sum of frequencies from rank 1 to given rank untilRank with appliying function f to each frequency before adding it to sum.
+ </summary>
+	<param name="TextData">Text.</param>
+	<param name="f">Function (param1: passed frequency) that is applied to the frequency (passed in param1) before adding to sum.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumAllFrequencies(QITA_OLTK.QITAInterfaces.IQITAText@,System.Func{System.Double,System.Double}@)">
+	<summary>
+ Counts total sum of all frequencies of Text with applying sum-function.
+ </summary>
+	<param name="TextData"></param>
+	<param name="f">Function (param1: passed frequency) that is applied to the frequency (passed in param1) before adding to sum.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.SumAllFrequencies(QITA_OLTK.QITAInterfaces.IQITAText@,System.Int32,System.Int32,System.Func{System.Double,System.Int32,System.Double}@)">
+	<summary>
+ Counts total sum of all frequencies of Text with applying sum-function.
+ </summary>
+	<param name="TextData">Text.</param>
+	<param name="iStart">Start at index.</param>
+	<param name="iEnd">End at index.</param>
+	<param name="f">Function (param1: passed frequency, param2: passed iteration index) that is applied to frequency before adding to sum.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.GetIndexVal(QITA_OLTK.QITAInterfaces.IQITAText@,QITA_OLTK.QITAInterfaces.IQITAIndex@)">
+	<summary>
+ Computes given index on given text.
+ </summary>
+	<param name="TextData">Target Text.</param>
+	<param name="index">Index to compute.</param>
+	<returns>Index value.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.IsWordMeaningful(QITA_OLTK.QITAInterfaces.IQITAText@,System.String)">
+	<summary>
+ Tests word whether it is meaningful or not. Based on Text AssignedWordTypeGetter.
+ </summary>
+	<param name="TextData">TextData with AssignedWordTypeGetter.</param>
+	<param name="sWord">Word to test.</param>
+	<returns>Returns TRUE if word is meaningful. If WordTypeGetter is not assigned, FALSE is returned.</returns>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase.GetWordType(QITA_OLTK.QITAInterfaces.IQITAText@,System.String)">
+	<summary>
+ Retreives word type within Text AssignedWordTypeGetter.
+ </summary>
+	<param name="TextData">Text with assigned WordTypeGetter.</param>
+	<param name="sWord">Word.</param>
+	<returns>Type of word. If AssignedWordTypeGetter is not set, UNKNOWN is returned.</returns>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAIndexBase">
+	<summary>
+ Implements IIndex interface, provides protected interface for manipulating internal
+ properties and contains helpful functions for writting new indexes. Class IndexBase
+ is thus dedicated to be inherited by individual Index calculation classes.
+ </summary>
+</member><member name="P:QITA_OLTK.QITAInterfaceImplementations.QITAMorphoAnalyzerBase.Initialized">
+	<summary>
+ Gets or sets whether is the lemmatizer initialized or not.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAMorphoAnalyzerBase.CheckIfInitialized">
+	<summary>
+ Checks if lemmatizer is initialized. If not, throws an exception.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAMorphoAnalyzerBase.ThrowInitError(System.String,System.Exception@)">
+	<summary>
+ Throws exception with given reason.
+ </summary>
+	<param name="sProblem">What happened?</param>
+	<param name="e">Exception instance if available.</param>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAMorphoAnalyzerBase.InitOK">
+	<summary>
+ Sets Initialized property to TRUE.
+ </summary>
+	<returns>TRUE always.</returns>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAMorphoAnalyzerBase">
+	<summary>
+ Implements IQITALemmatizer Interface and provides functions for manipulating internal data.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITATokenizerOnlyBase">
+	<summary>
+ Inherits QITAMorphoAnalyzerBase with ignored non-tokenizer functions.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAPostProcessorBase">
+	<summary>
+ Implements IQITATextProstProcessors and provides functions for manipulating internal data.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITANumberResult">
+	<summary>
+ Inherits QITAResultBase and is used as SIMPLE Number result container.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAStringResult">
+	<summary>
+ Inherits QITAResultBase and is used as SIMPLE String result container.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAComplexResult.#ctor(QITA_OLTK.QITAInterfaces.IQITAText@,QITA_OLTK.QITAInterfaces.IQITAIndex@,System.Object,System.Object)">
+	<summary>
+ Creates new result with simple and complex data values.
+ </summary>
+	<param name="textReference">Reference to Text.</param>
+	<param name="indexReference">Reference to Index.</param>
+	<param name="resultValue">Primary value (that will be showed in cell). You may use NULL for displyaing "[...]" string.</param>
+	<param name="complexResultValue">Complex data (array, table, ...) that will be stored.</param>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAComplexResult.#ctor(QITA_OLTK.QITAInterfaces.IQITAText@,System.String,System.String,System.Object)">
+	<summary>
+ Creates new result with given complex data and specified display string.
+ </summary>
+	<param name="textReference">Reference to source Text.</param>
+	<param name="sResultName">Name of result.</param>
+	<param name="sDisplayString">Value used for displaying used by ToCellString() and
+ ToFullString() functions. If set to NOTHING, "[...]" will be used.</param>
+	<param name="resultValue">Complex value that will be stored.</param>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAComplexResult">
+	<summary>
+ Inherits QITAResultBase and is used as complex data structures container.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAText.N">
+	<summary>
+ Token count.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAText.V">
+	<summary>
+ Type count.
+ </summary>
+</member><member name="M:QITA_OLTK.QITAInterfaceImplementations.QITAText.f(System.Int32)">
+	<summary>
+ Frequency at rank.
+ </summary>
+</member><member name="T:QITA_OLTK.QITAInterfaceImplementations.QITAText">
+	<summary>
+ Implements IText interface and provides various additional functions for operating 
+ linguistic text (aka 'DataText'/'Text').
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAPositiveArray.#ctor(System.Int64[]@)">
+	<summary>
+ Creates new one-based array from given zero-based array.
+ </summary>
+	<param name="aZeroBasedIntArray">Zero-based array.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAPositiveArray.At(System.Int32)">
+	<summary>
+ Retreives a value at index in table.
+ </summary>
+	<param name="n">Cell index.</param>
+	<returns>Value at index n.</returns>
+	<remarks></remarks>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITAPositiveArray.Item(System.Int32)">
+	<summary>
+ Sets or gets a value to/from index.
+ </summary>
+	<param name="nIndex">Value index.</param>
+	<value>Any value to be stored in array.</value>
+	<returns>Stored value.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAPositiveArray.Count">
+	<summary>
+ Retreives the size of table.
+ </summary>
+	<returns>Table size.</returns>
+	<remarks></remarks>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITAPositiveArray">
+	<summary>
+ Provides positive (or one-based) array container for linguistic purposes which
+ (in oposite to programming) use tables and arrays indexed from 1 and not from 0.
+ </summary>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.Value(System.String)">
+	<summary>
+ Gets or sets words stored value.
+ </summary>
+	<param name="sWord">Word thichs value will be used.</param>
+	<value>New value.</value>
+	<returns>Value stored for given word.</returns>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.Word(System.Int32)">
+	<summary>
+ Gets word at given index.
+ </summary>
+	<param name="index">Index in value sorted table.</param>
+	<returns>Word.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.ContainsWord(System.String)">
+	<summary>
+ Retreives wheter given word exists in table.
+ </summary>
+	<param name="sWord">Word to be tested.</param>
+	<returns>TRUE if exists.</returns>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.Count">
+	<summary>
+ Retreives count of rows in table.
+ </summary>
+	<returns>Count of rows in table.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.Add(System.String,System.Int32)">
+	<summary>
+ Adds or modifies existing value for given word.
+ </summary>
+	<param name="sWord">Word.</param>
+	<param name="nValue">Integer value to be stored.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.GetWordValue(System.String)">
+	<summary>
+ Retreives value stored for given word.
+ </summary>
+	<param name="sWord">Word whichs value will be retreived.</param>
+	<returns>Stored value for given word.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.CountWord(System.String)">
+	<summary>
+ Routine for automatically incrementing value for given word by 1 if exists.
+ If given word does not exist, it is automatically added with value 1.
+ </summary>
+	<param name="sWord">Word to be counted.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAWordToNumberTable.Clear">
+	<summary>
+ Clears the table content.
+ </summary>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITAWordToNumberTable">
+	<summary>
+ Provides unified Word to numeric value simple table.
+ </summary>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITAWordFrequencyTable">
+	<summary>
+ Provides unified Word to frequency simple table.
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.AddRow">
+	<summary>
+ Adds a new row.
+ </summary>
+	<returns>New row index.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.AddRow(System.String[])">
+	<summary>
+ Adds data to columns.
+ </summary>
+	<param name="rowsData"></param>
+	<returns>New row index.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.EditRow(System.Int32,System.String[])">
+	<summary>
+ Sets all cells of given row into given data.
+ </summary>
+	<param name="iRowIndex">Index of a row to edit.</param>
+	<param name="rowData">New cell values.</param>
+	<returns>Row index.</returns>
+	<remarks>Number of data has to be the same as number of columns.</remarks>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.AddColumn(System.String)">
+	<summary>
+ Adds a new column with name.
+ </summary>
+	<param name="sColumnName">Name of column.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.PopulateAllColumnsRows(System.Int32)">
+	<summary>
+ Populates all column rows to same row count.
+ </summary>
+	<param name="nNewSize">New row count.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.AddRows(System.Int32)">
+	<summary>
+ Populates rows of table to given row count.
+ </summary>
+	<param name="nRowsCount">Row count.</param>
+	<returns>Row count.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.Clear">
+	<summary>
+ Removes all rows
+ </summary>
+	<remarks></remarks>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.ColumnNames">
+	<summary>
+ Returns list of Text Table Column Names.
+ </summary>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.Columns">
+	<summary>
+ Retreives data from all columns.
+ </summary>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.Column(System.String)">
+	<summary>
+ Retreives data from given column.
+ </summary>
+	<param name="sColumnName">Column name.</param>
+	<returns>Column data object array.</returns>
+	<remarks></remarks>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.Column(System.String,System.Func{System.Object,System.Object})">
+	<summary>
+ Retreives data from given column and applies a function f on it.
+ </summary>
+	<param name="sColumnName">Column name.</param>
+	<param name="f">Function that is applied on each element of column data array. (Param1: [IN] object stored in array passed to function. Returns: resulting object.)</param>
+	<returns>Column data object array.</returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.GetColumnData``1(System.String,System.Func{System.Object,``0})">
+	<summary>
+ Retreives data from given column and applies a function f on it.
+ </summary>
+	<param name="sColumnName">Column name.</param>
+	<param name="f">Function that is applied on each element of column data array. Function: [IN] Param1 -- object stored in array. [OUT] Result.</param>
+	<returns>Data from given column.</returns>
+	<remarks></remarks>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.Column(System.Int32)">
+	<summary>
+ Retreives data from given column.
+ </summary>
+	<param name="columnIndex">Column index.</param>
+	<returns>Column data object array.</returns>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.RowsCount">
+	<summary>
+ Retreives number of rows in table.
+ </summary>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.TableName">
+	<summary>
+ Sets or gets name of table.
+ </summary>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.PreferredDisplayType">
+	<summary>
+ Sets or gets type of control which is preffered for displaying contained data.
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.GetColumnName(System.Int32)">
+	<summary>
+ Retreives name of given column.
+ </summary>
+	<param name="index">Index of column.</param>
+	<returns>Name of column if exists. Nothing otherwise.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.TableToString">
+	<summary>
+ Converts table to CSV table string
+ </summary>
+	<returns>CSV String of the table.</returns>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.CellValue(System.Int32,System.String)">
+	<summary>
+ Gets or sets value of given table cell.
+ </summary>
+	<param name="iRow">Table row (1-based) index.</param>
+	<param name="sColumnName">Table column name.</param>
+	<value>Any object to be stored to table.</value>
+	<returns>Object stored in table cell.</returns>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.CellValue(System.Int32,System.Int32)">
+	<summary>
+ Gets or sets value of given table cell.
+ </summary>
+	<param name="iRow">Table row index.</param>
+	<param name="column">Table column descriptor.</param>
+	<value>Any object to be stored to table.</value>
+	<returns>Object stored in table cell.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.AssignRowsToColumn(System.Int32,System.Array@)">
+	<summary>
+ Assigns row values for given column.
+ </summary>
+	<param name="column">Destination column that will be filled.</param>
+	<param name="rows">Array of values that will be used as values.</param>
+	<returns>New rows count.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.Agregate(System.Int32,System.Int32,System.Func{System.Object,System.Object}@)">
+	<summary>
+ Iterates throught all values in source column and uses function f to
+ transform these values into their neighbourhooding cells in destination column.
+ </summary>
+	<param name="sourceColumn">Source column to be iterated.</param>
+	<param name="destinationColumn">Destination column to be filled.</param>
+	<param name="f">Function (param1: cell value) that will be applied to source value and its return value will be saved in destination.</param>
+	<returns>True.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.Agregate(System.String,System.String,System.Func{System.Object,System.Object}@)">
+	<summary>
+ Iterates throught all values in source column and uses function f to
+ transform these values into their neighbourhooding cells in destination column.
+ </summary>
+	<param name="sourceColumn">Source column to be iterated.</param>
+	<param name="destinationColumn">Destination column to be filled.</param>
+	<param name="f">Function (param1: cell value) that will be applied to source value and its return value will be saved in destination.</param>
+	<returns>True when all columns are existing. False when any of given columns do not exist.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.Agregate(System.Int32,System.Func{System.Int32,System.Object,System.Object}@)">
+	<summary>
+ Iterates throught all values in column and applies function f to them.
+ </summary>
+	<param name="column">Column to be iterated.</param>
+	<param name="f">Function (param1: cell row index, param2: cell value) that will be applied to cell value and used to replace its value by f result.</param>
+	<returns>True.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.Agregate(System.String,System.Func{System.Int32,System.Object,System.Object}@)">
+	<summary>
+ Iterates throught all values in column and applies function f to them.
+ </summary>
+	<param name="column">Column to be iterated.</param>
+	<param name="f">Function (param1: cell row index, param2: cell value) that will be applied to cell value and used to replace its value by f result.</param>
+	<returns>True when column exists, else False.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.IterateThroughtRows(System.Func{System.Int32,System.Double})">
+	<summary>
+ Iterates throught all rows and summing value returned by given function f.
+ </summary>
+	<param name="f">Function (PARAM1: [in] row index) that is applied to row index.</param>
+	<returns>Sum.</returns>
+</member><member name="P:QITA_OLTK.QITADataTypes.QITATable.Value">
+	<summary>
+ Reference to QITATable
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.SetChartableColumns(System.String,System.String,System.String)">
+	<summary>
+ Sets columns from which the chartable data will be derived from.
+ </summary>
+	<param name="xColumnName">Column for X coord. If NOTHING is passed, actual row index will be used.</param>
+	<param name="yColumnName">Column for Y coord.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.SetChartableColumns(System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Sets columns from which the chartable data will be derived from.
+ </summary>
+	<param name="iXColumn">Column for X coord. If -1, actual row index will be used.</param>
+	<param name="iYColumn">Column for Y coord.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITATable.ToChartableData">
+	<summary>
+ Converts actual table to chartable data.
+ </summary>
+	<returns>Chartable Data.</returns>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITATable">
+	<summary>
+ Provides simple table container with few handy functions. Rows are positive-indexed
+ (indexed from 1). Columns are accesible throught their name or zero-based index.
+ </summary>
+</member><member name="F:QITA_OLTK.QITADataTypes.QITATextTable.TextTableColumns.Rank">
+	<summary>
+ Frequency rank of word.
+ </summary>
+</member><member name="F:QITA_OLTK.QITADataTypes.QITATextTable.TextTableColumns.AveragedRank">
+	<summary>
+ Averaged word rank by frequencies.
+ </summary>
+</member><member name="F:QITA_OLTK.QITADataTypes.QITATextTable.TextTableColumns.WordFrequency">
+	<summary>
+ Word frequency in text.
+ </summary>
+</member><member name="F:QITA_OLTK.QITADataTypes.QITATextTable.TextTableColumns.Word">
+	<summary>
+ Word itself.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITATextTable.TextTableColumns">
+	<summary>
+ Describes column names and column order of Text table.
+ </summary>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITATextTable">
+	<summary>
+ Provides basic informations about Text.
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.Done">
+	<summary>
+ Finalizes data input to DataArray.
+ </summary>
+	<returns>TRUE when data suitable for charting are contained.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.GetX(System.Int32)">
+	<summary>
+ Retreives X coord of point at index.
+ </summary>
+	<param name="index">Index of point.</param>
+	<returns>X coord.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.GetY(System.Int32)">
+	<summary>
+ Retreives Y coord of point at index.
+ </summary>
+	<param name="index">Index of point.</param>
+	<returns>Y coord.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.GetDescription(System.Int32)">
+	<summary>
+ Retreives description of point at index.
+ </summary>
+	<param name="index">Index of point.</param>
+	<returns>Description of point.</returns>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.SetDataTitles(System.String,System.String,System.String)">
+	<summary>
+ Sets title (axes labels) for stored data.
+ </summary>
+	<param name="xTitle">X axis title.</param>
+	<param name="yTitle">Y axis title.</param>
+	<param name="dTitle">Description source title.</param>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.GetXAxisTitle">
+	<summary>
+ Retreives X-axis title.
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.GetYAxisTitle">
+	<summary>
+ Retreives Y-axis title.
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.GetDAxisTitle">
+	<summary>
+ Retreives description source title.
+ </summary>
+</member><member name="M:QITA_OLTK.QITADataTypes.QITAChartableDataArray.Count">
+	<summary>
+ Returns count of rows.
+ </summary>
+	<returns>Rows count.</returns>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITAChartableDataArray">
+	<summary>
+ Provides container for chartable data in X, Y, Z (description) format. After
+ saving data, function "Done" must be called, otherwise charting may fail.
+ ChartableDataArray is ZERO-BASED and thus all row initializations have to
+ pass ZERO-based (zero-indexed) row count.
+ </summary>
+</member><member name="T:QITA_OLTK.QITADataTypes.QITAProjectDataSource">
+	<summary>
+ Provides data container with QITA Project reference.
+ </summary>
+</member><member name="P:QITA_OLTK.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:QITA_OLTK.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:QITA_OLTK.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.GetFileTextContent(System.String,System.String@,System.Text.Encoding@,System.Boolean,System.String@)">
+	<summary>
+ Reads text file content.
+ </summary>
+	<param name="sFile">File to be readed.</param>
+	<param name="sOutContent">Readed content.</param>
+	<param name="InOutEncoding">If set to NOTHING, encoding will be detected and returned.</param>
+	<param name="reserved">Reserved for further usage. Set to FALSE.</param>
+	<param name="sOutError">Error message output.</param>
+	<returns>TRUE if success.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.GetFileTextContent(System.String,System.String@,System.Text.Encoding,System.String@)">
+	<summary>
+ Reads text file content.
+ </summary>
+	<param name="sFile">File to be readed.</param>
+	<param name="sOutContent">Readed content.</param>
+	<param name="eEncoding">Encoding of file content.</param>
+	<param name="sOutError">Output: Error message.</param>
+	<returns>TRUE if success.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.GetFileNameFromPath(System.String)">
+	<summary>
+ Extracts file name from path.
+ </summary>
+	<param name="sPath">File path.</param>
+	<returns>File name.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.NewTextFileWithPrompt(System.String,System.String)">
+	<summary>
+ Prompts Save file dialog and saves given text.
+ </summary>
+	<param name="sSuggestedFileName">Suggested file name prompted in Save file dialog.</param>
+	<param name="sData">Text data to save.</param>
+	<returns>TRUE if succesfull.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.GetApplicationByFileExtension(System.String)">
+	<summary>
+ Tries to obtain executable file that is being used for executing given file extension
+ from system register. Eg. ".py" returns full path to python.exe.
+ </summary>
+	<param name="ext">Extension in dot format (.py, .pl, ...).</param>
+	<returns>Path to executable file associated with given file extension.</returns>
+	<remarks>When not found, null string is returned.</remarks>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.CheckExtensionCanBeExecuted(System.String)">
+	<summary>
+ Checks, whether given extension has any assigned program.
+ </summary>
+	<param name="sExtension">Extension in dot format (.py, .pl, ...).</param>
+	<returns>TRUE whether any program for given extension has been found.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.GetAppDirectory">
+	<summary>
+ Returns application directory.
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.GetLastDirectoryName(System.String)">
+	<summary>
+ Retreives name of directory that is last in given path, eg.: D:\test\folderX\file.gif
+ returns "folderX".
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.BinaryFileToAlphabetedText(System.String,System.String,System.String@,System.String@)">
+	<summary>
+ Converts binary file to string by mapping bytes onto given alphabete.
+ </summary>
+	<param name="sFile">File to read.</param>
+	<param name="sAlphabete">Alphabete to use.</param>
+	<returns>File content after mapping bytes.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.IsFileTextFile(System.String)">
+	<summary>
+ Retreives whether the file has known plain text extension (.TXT, .FNA, ...)
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.ConvertHTMLToPlainText(System.String)">
+	<summary>
+ Retreives plain text from HTML content.
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.IsHTML(System.String)">
+	<summary>
+ Examines string whether it seems as html tagged.
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrIsAny(System.String)">
+	<summary>
+ Tests if string is not null or empty.
+ </summary>
+	<param name="s">String to test.</param>
+	<returns>TRUE whether the string is not null or empty.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrIsSame(System.String,System.String)">
+	<summary>
+ Tests two strings whether they are same or not (without case sensitivity).
+ </summary>
+	<param name="a">First string.</param>
+	<param name="b">Second string.</param>
+	<returns>TRUE when both strings are same.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.IsAny(System.Object@)">
+	<summary>
+ Tests object whether it is not null.
+ </summary>
+	<param name="o">Object to test.</param>
+	<returns>TRUE if object is set.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrMidCharTerm(System.String,System.String,System.String)">
+	<summary>
+ Extracts string surrounded by simple strings.
+ </summary>
+	<param name="sString">String.</param>
+	<param name="sBegin">String at beggining.</param>
+	<param name="sEnd">String at end.</param>
+	<returns>String between sBegin and sEnd.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrMidCharTermE(System.String,System.String,System.String)">
+	<summary>
+ Same as StrMidCharTerm but end delimitter is searched from end.
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.NormalizeString(System.String)">
+	<summary>
+ Normalizes string (turns it into lower case).
+ </summary>
+	<param name="s">String to normalize.</param>
+	<returns>Normalized string.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrRemoveEnding(System.String,System.String)">
+	<summary>
+ Removes given ending from string if exists.
+ </summary>
+	<param name="s">String to be truncated.</param>
+	<param name="sEnding">String to remove.</param>
+	<returns>String without given ending.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrRemove(System.String,System.Int32,System.String)">
+	<summary>
+ Removes given substring by start index and delimitter (inclusive).
+ </summary>
+	<param name="s">String expression.</param>
+	<param name="startIndex">Zero based start index.</param>
+	<param name="sDelimitter">String delimitting the end of removal. This string is removed also.</param>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.ToNumber(System.String)">
+	<summary>
+ Converts any number in string format to Double. 
+ </summary>
+	<param name="sString">Number in string format.</param>
+	<returns>Double value.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.IsNumber(System.String)">
+	<summary>
+ Tests whether given string is number or not.
+ </summary>
+	<param name="sString">String to test.</param>
+	<returns>TRUE when string is number.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.ObjArrayToNumberArray(System.Object[]@)">
+	<summary>
+ Converts object array containing numbers to array of Double.
+ </summary>
+	<param name="o">Object array with ToString() returning numbers.</param>
+	<returns>Array of doubles.</returns>
+	<remarks>When given object number is NULL, NULL is returned.</remarks>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.StrContains(System.String,System.String)">
+	<summary>
+ Tests whether string contains given substring.
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.EnBraceIfNeeded(System.String,System.Boolean)">
+	<summary>
+ Encloses string into brackets if it is not already.
+ </summary>
+	<param name="s">String to be enclosed by brackets.</param>
+	<param name="bMakePreceedingSpace">When TRUE, prepends space before first bracket.</param>
+	<returns>String in brackets.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.ContainsUTF8InvalidChar(System.String)">
+	<summary>
+ Tests string whether contains UTF8 invalid character.
+ </summary>
+	<param name="s">String to test.</param>
+	<returns>TRUE when UTF8 invalid character has been found.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.DecodeUnicodeSequences(System.String)">
+	<summary>
+ Decodes unicode sequences like "\u231\u242" to character string.
+ </summary>
+	<param name="s">String containing unicode sequences.</param>
+	<returns>String with with decoded uncode sequences.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.ByteToAlphabeteCharacter(System.Int32,System.String)">
+	<summary>
+ Maps integer onto alphabete character.
+ </summary>
+	<param name="character"></param>
+	<param name="alphabete"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.DataGridViewToCSV(System.Windows.Forms.DataGridView@,System.String)">
+	<summary>
+ Exports content of given DataGridView to CSV formatted data.
+ </summary>
+	<param name="dataGrid">DataGridView for export.</param>
+	<param name="sDelimitter">Delimitter to be used.</param>
+	<returns>CSV formatted data.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.ListViewToCSV(System.Windows.Forms.ListView@,System.String)">
+	<summary>
+ Exports content of given ListView to CSV formatted data.
+ </summary>
+	<param name="lv">ListView for export.</param>
+	<param name="sDelimitter">Delimitter to be used.</param>
+	<returns>CSV formatted data.</returns>
+</member><member name="T:QITA_OLTK.SharedHelpFunctions.ListViewComparer">
+	<summary>
+ Class providing listview sorting comparer.
+ Author: http://www.vb-helper.com/howto_net_listview_sort_clicked_column.html
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.SortLV(System.Windows.Forms.ListView@,System.Windows.Forms.ColumnClickEventArgs)">
+	<summary>
+ Sub providing sorting of listview.
+ Author: http://www.vb-helper.com/howto_net_listview_sort_clicked_column.html
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.VDump(System.String,System.Object@)">
+	<summary>
+ Dumps variable to string.
+ </summary>
+	<param name="sName">Variable name.</param>
+	<param name="o">Object to be dumped.</param>
+	<returns>Dumped variable.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.EditControlTagAndTextByUserInput(System.Object@,System.String,System.String,System.Boolean,System.Func{System.String,System.String},System.String)">
+	<summary>
+ Edits text and tag property of given object by user input. Entered value is stored in TAG property
+ of given object and thus should contain default value.
+ </summary>
+	<param name="obj">Object to be edited.</param>
+	<param name="sPrependText">Text that is prepended prior to actual value. Eg. PrependText "Value" creates "Value: " string.</param>
+	<param name="sQueryText">Text that will be displayed in user input query.</param>
+	<param name="inputIsNumber">Sets whether input data have to be numeric.</param>
+	<param name="testFunction">Function (param1: input string; returns new string). User function that gets input string and returned
+ string is used as a new value. This parameter can be NULL.</param>
+	<returns>New value.</returns>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.AddOrRemoveStyle(System.Drawing.FontStyle@,System.Drawing.FontStyle@)">
+	<summary>
+ Modifies Font style by given style.
+ </summary>
+</member><member name="M:QITA_OLTK.SharedHelpFunctions.Swap(System.Object@,System.Object@)">
+	<summary>
+ Swaps two objects.
+ </summary>
+</member><member name="M:QITA_OLTK.MathExt.SumWhileLessThanIndex(System.Int32[]@,System.Int32,System.Double)">
+	<summary>
+ Calculates Sum of given array with given boundings (Classical Sum).
+ </summary>
+	<param name="data">Data array to sum.</param>
+	<param name="iStart">Start index.</param>
+	<param name="dEndIndex">End index.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.MathExt.SumPositiveArray(System.Int32[]@,System.Func{System.Double,System.Double})">
+	<summary>
+ Calculates sum of positive (one-based) integer array with applying function f to each 
+ item before it is added to sum.
+ </summary>
+	<param name="data">Positive one-based integer array.</param>
+	<param name="f">Function (param1: passed item value) that is applied to array-item.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.MathExt.SumPositiveArray(System.Int32[]@,System.Int32,System.Int32,System.Func{System.Double,System.Int32,System.Double})">
+	<summary>
+ Calculates sum of positive (one-based) integer array with applying function f to each 
+ item before it is added to sum.
+ </summary>
+	<param name="data">Positive one-based integer array.</param>
+	<param name="iStart">Start at index.</param>
+	<param name="iEnd">End at index.</param>
+	<param name="f">Function (param1: passed array item, param2: passed iteration index) that is applied to array-item.</param>
+	<returns>Sum.</returns>
+</member><member name="M:QITA_OLTK.MathExt.EuclidianDistance(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Calculates distance between two points in 2D.
+ </summary>
+	<param name="a1">Point1.X</param>
+	<param name="a2">Point1.Y</param>
+	<param name="b1">Point2.X</param>
+	<param name="b2">Point2.Y</param>
+	<returns>Euclidian distance.</returns>
+</member><member name="M:QITA_OLTK.MathExt.IsNumberWhole(System.Double)">
+	<summary>
+ Tests, whether given number does not contain any decimal digits.
+ </summary>
+	<param name="d">Number to test.</param>
+	<returns>TRUE if the number has not any decimal digits.</returns>
+</member><member name="M:QITA_OLTK.MathExt.Log2(System.Double)">
+	<summary>
+ Returns natural logarithm of given number.
+ </summary>
+	<param name="n">Number.</param>
+	<returns>Natural logarithm.</returns>
+</member><member name="M:QITA_OLTK.MathExt.StandardDeviation(QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Calculates standard deviation of given two numbers.
+ </summary>
+	<returns>Standard deviation.</returns>
+</member><member name="M:QITA_OLTK.MathExt.StandardDeviation(System.Collections.Generic.List{QITA_OLTK.QITAInterfaces.IQITAResult}@)">
+	<summary>
+ Calculates standard deviation of given number QITA Results array.
+ </summary>
+	<param name="results">Results whichs values will be used for deviation calculation.</param>
+	<returns>Standard deviation.</returns>
+</member><member name="M:QITA_OLTK.MathExt.StandardDeviation(System.Double@,System.Double@)">
+	<summary>
+ Calculates standard deviation of given two numbers.
+ </summary>
+	<returns>Standard deviation.</returns>
+</member><member name="M:QITA_OLTK.MathExt.StandardDeviation(System.Double[]@)">
+	<summary>
+ Calculates standard deviation of given number array.
+ </summary>
+	<param name="values">Values to be calculated.</param>
+	<returns>Standard deviation.</returns>
+</member><member name="M:QITA_OLTK.MathExt.Average(System.Collections.Generic.List{QITA_OLTK.QITAInterfaces.IQITAResult}@)">
+	<summary>
+ Calculates average of IQITA Results values.
+ </summary>
+	<param name="results"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.MathExt.UAsymptoticTest(QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Calculates Asymptotic u-test within given values and their diffusion.
+ </summary>
+	<param name="value1">Value 1.</param>
+	<param name="value2">Value 2.</param>
+	<param name="varValue1">Diffusion of Value 1.</param>
+	<param name="varValue2">Diffusion of Value 2.</param>
+</member><member name="M:QITA_OLTK.MathExt.UAsymptoticTest(System.Double@,System.Double@,QITA_OLTK.QITAInterfaces.IQITAResult@,QITA_OLTK.QITAInterfaces.IQITAResult@)">
+	<summary>
+ Calculates Asymptotic u-test within given values and their diffusion.
+ </summary>
+	<param name="value1">Value 1.</param>
+	<param name="value2">Value 2.</param>
+	<param name="varValue1">Diffusion of Value 1.</param>
+	<param name="varValue2">Diffusion of Value 2.</param>
+</member><member name="M:QITA_OLTK.MathExt.UAsymptoticTest(System.Double@,System.Double@,System.Double@,System.Double@)">
+	<summary>
+ Calculates Asymptotic u-test within given values and their diffusion.
+ </summary>
+	<param name="value1">Value 1.</param>
+	<param name="value2">Value 2.</param>
+	<param name="varValue1">Diffusion of Value 1.</param>
+	<param name="varValue2">Diffusion of Value 2.</param>
+</member><member name="M:QITA_OLTK.MathExt.RandomNumber(System.Int32,System.Int32)">
+	<summary>
+ Generates random number at given interval.
+ </summary>
+	<returns>Random number.</returns>
+</member><member name="M:QITA_OLTK.MathExt.IsInIntervalInclusive(System.Double,System.Double,System.Double)">
+	<summary>
+ Tests, wheter given number is in given interval (inclusive).
+ </summary>
+	<param name="dTestedNumber">Number to test.</param>
+	<param name="dLow">Low interval border.</param>
+	<param name="dHigh">High interval border.</param>
+	<returns>TRUE when number is in given interval. Otherwise FALSE.</returns>
+</member><member name="M:QITA_OLTK.MathExt.GetColorFromPercentage(System.Int32)">
+	<summary>
+ Generates color in Green-Yellow-Red scale by given percentage. 
+ 0 % is green. 100 % is red.
+ </summary>
+</member><member name="M:QITA_OLTK.HelperClasses.PipedLineExecution.#ctor(System.String,System.String,System.String,System.Text.Encoding,System.Exception@)">
+	<summary>
+ Initializes piped communication with given executable file.
+ </summary>
+	<param name="sExecutableFilePath">Path to executable file.</param>
+	<param name="sArguments">Arguments that will be passed to executable file.</param>
+	<param name="encoding">Encoding of target program IO.</param>
+	<param name="outError">Output: Exception.</param>
+</member><member name="M:QITA_OLTK.HelperClasses.PipedLineExecution.WriteLineAndReadOutput(System.String)">
+	<summary>
+ Writes line to pipe and reads output.
+ </summary>
+	<param name="s">Data to write.</param>
+	<returns>Readed response.</returns>
+</member><member name="T:QITA_OLTK.HelperClasses.PipedLineExecution">
+	<summary>
+ Encapsulates Windows pipe IO with given executable file. Works with single lines.
+ </summary>
+	<remarks>WorkingDirectory is set to directory given in executable file path.</remarks>
+</member><member name="M:QITA_OLTK.HelperClasses.HTTPPostHandler.#ctor(System.String)">
+	<summary>
+ Creates new instance of HTTPPostHandler within given server.
+ </summary>
+	<param name="sServerURL">Server url.</param>
+</member><member name="M:QITA_OLTK.HelperClasses.HTTPPostHandler.AddRequestField(System.String,System.String)">
+	<summary>
+ Adds POST request field with given data.
+ </summary>
+	<param name="sFieldName">Name of POST field name.</param>
+	<param name="sFieldData">Data.</param>
+</member><member name="M:QITA_OLTK.HelperClasses.HTTPPostHandler.CheckConnection">
+	<summary>
+ Checks whether the computer is connected to internet or not.
+ </summary>
+	<returns>TRUE if connected.</returns>
+</member><member name="M:QITA_OLTK.HelperClasses.HTTPPostHandler.TransferData(System.String@,System.Exception@)">
+	<summary>
+ Transfers post request to server, waits for response and returns received data.
+ </summary>
+	<param name="outReceivedData">Output: received data string.</param>
+	<param name="outException">Output: exception instance, if any.</param>
+	<returns>TRUE if request was succesfull.</returns>
+</member><member name="T:QITA_OLTK.HelperClasses.HTTPPostHandler">
+	<summary>
+ Encapsulates HTTP Post request functions with definable POST form fields.
+ </summary>
+</member><member name="M:QITA_OLTK.UFNewChartWizard.#ctor(QITA_OLTK.QITADataTypes.QITAProjectDataSource@,System.Boolean)">
+	<summary>
+ Creates new Chart Wizard based on data from given project.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.ImageList">
+	<summary>
+ Gets or sets image list used by GIComboBoxEx.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplayImagesForAllItems">
+	<summary>
+ Gets or sets wheter images are displayed for sub-items (non group headers).
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplayGroupsHeaders">
+	<summary>
+ Gets or sets wheter groups headers will be displayed or not.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.SelectedStoredObject">
+	<summary>
+ Retreives StoredObject of currently selected item.
+ </summary>
+	<remarks>When no item is selected, Nothing is returned.</remarks>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplayEmptyGroups">
+	<summary>
+ Gets or sets whether headers of empty groups will be displayed or not.
+ </summary>
+	<remarks>Defaultly set to False.</remarks>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplayPrependedSpace">
+	<summary>
+ Gets or sets whether items will be prepended by space.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplayDescriptions">
+	<summary>
+ Gets or sets whether descriptions are displayed or not.
+ </summary>
+	<remarks>Set to True by default.</remarks>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplaySelectedItemImage">
+	<summary>
+ Gets or sets whether image will be displayed for selected item or not.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.DisplayGroupHeadersImage">
+	<summary>
+ Gets or sets whether images in group headers will be displayed or not.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.GroupHeaderBackColor">
+	<summary>
+ Gets or sets group header background color.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.ForeColorDescription">
+	<summary>
+ Gets or sets fore color of descriptions.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.ForeColorDescriptionInGroupHeaders">
+	<summary>
+ Gets or sets fore color of descriptions in group headers.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.HideSelectedItemWhenControlDisabled">
+	<summary>
+ Gets or sets whether the selected item is visible or not while the control is disabled.
+ This helps to make it more cleaner for user that "really no data from this control will be used".
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.AllItems">
+	<summary>
+ Read-only list of all items contained in Combobox.
+ </summary>
+</member><member name="P:QITA_OLTK.ComboBoxEx.Items">
+	<summary>
+ Read-only list of displayed items contained in Combobox. Editing Combobox content is available
+ only programmatically.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddGroup(System.String)">
+	<summary>
+ Adds a new Group header.
+ </summary>
+	<param name="sGroupName">Name of group.</param>
+	<returns>Combobox group header.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddGroup(System.String,System.String,System.String)">
+	<summary>
+ Adds a new Group header.
+ </summary>
+	<param name="sGroupName">Name of group.</param>
+	<param name="sDescription">Group description.</param>
+	<param name="sImageKey">Image key of group.</param>
+	<returns>Combobox group header.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddGroup(QITA_OLTK.GIComboBoxGroupHeader@)">
+	<summary>
+ Adds a new Group header.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String)">
+	<summary>
+ Adds a new item into the GIComboboxEx without affiliating it with any group.
+ </summary>
+	<param name="sText">Text.</param>
+	<returns>Added item.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String,System.String,System.String)">
+	<summary>
+ Adds a new item into the GIComboBoxEx.
+ </summary>
+	<param name="sText">Text to display.</param>
+	<param name="sDescription">Description of item.</param>
+	<param name="sGroupName">Name of group.</param>
+	<returns>Added item.</returns>
+	<remarks>When non-existing group name is supplied, GIComboboxEx will create it with the same image and null description.
+ Image info is inherited from Group.</remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String,System.String,QITA_OLTK.GIComboBoxGroupHeader)">
+	<summary>
+ Adds a new item into the GIComboBoxEx.
+ </summary>
+	<param name="sText">Text to display.</param>
+	<param name="sDescription">Description of item.</param>
+	<param name="groupHeader">Group.</param>
+	<returns>Added item.</returns>
+	<remarks>When non-existing group name is supplied, GIComboboxEx will create it with the same image and null description.
+ Image info is inherited from Group.</remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String,System.String,System.Object@)">
+	<summary>
+ Adds a new item into the GIComboboxEx without affilating it with any group.
+ </summary>
+	<param name="sText">Text.</param>
+	<returns>Added item.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String,System.String)">
+	<summary>
+ Adds a new item into the GIComboboxEx without affilating it with any group.
+ </summary>
+	<param name="sText">Text.</param>
+	<returns>Added item.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String,System.String,System.String,System.String)">
+	<summary>
+ Adds a new item into the GIComboBoxEx.
+ </summary>
+	<param name="sText">Text to display.</param>
+	<param name="sDescription">Description of item.</param>
+	<param name="sGroupName">Name of group.</param>
+	<param name="sImageKey">Name of Image.</param>
+	<returns>Added item.</returns>
+	<remarks>When non-existing group name is supplied, GIComboboxEx will create it with the same Image and null description.</remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(System.String,System.String,System.String,System.String,System.Object@)">
+	<summary>
+ Adds a new item into the GIComboBoxEx.
+ </summary>
+	<param name="sText">Text to display.</param>
+	<param name="sDescription">Description of item.</param>
+	<param name="sGroupName">Name of group.</param>
+	<param name="sImageKey">Name of Image.</param>
+	<param name="oStoreObject">Object to be stored.</param>
+	<returns>Added item.</returns>
+	<remarks>When non-existing group name is supplied, GIComboboxEx will create it with the same Image and null description.</remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItem(QITA_OLTK.GIComboBoxItem)">
+	<summary>
+ Adds a new item into the GIComboboxEx.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.AddItemImage(System.String,System.String)">
+	<summary>
+ Adds a new image item.
+ </summary>
+	<param name="sImageKey">Key of image.</param>
+	<param name="sGroupName">Group name.</param>
+	<returns>Added GIComboBoxItem.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.ContainsGroup(QITA_OLTK.GIComboBoxGroupHeader)">
+	<summary>
+ Tests given group whether it is contained in GIComboboxEx or not.
+ </summary>
+	<param name="groupHeader">Group to test.</param>
+	<returns>TRUE when exists.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.ContainsGroup(System.String)">
+	<summary>
+ Tests given group name whether it is contained in GIComboboxEx or not.
+ </summary>
+	<param name="sGroupName">Group name to test.</param>
+	<returns>TRUE when exists.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.GetSelectedStoredObject">
+	<summary>
+ Retreives StoredObject of currently selected item.
+ </summary>
+	<returns>Stored object.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.GetGroupHeaders">
+	<summary>
+ Retreives all group headers.
+ </summary>
+	<returns>List of group headers.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.GetGroupHeader(System.String)">
+	<summary>
+ Retreives group header for given group.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.GetGroupItems(System.String)">
+	<summary>
+ Retreives all items affiliated within given group.
+ </summary>
+	<param name="sGroupName">Name of group.</param>
+	<returns>List of items within given group.</returns>
+	<remarks>When supplied group does not exist, Nothing is returned.</remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.GetItem(System.String)">
+	<summary>
+ Finds first item matching given sItemText (except Group headers).
+ </summary>
+	<returns>Found GIComboBoxItem. Returns Nothing when nothing found.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SetGroupVisibility(System.String,System.Boolean)">
+	<summary>
+ Sets whether whole group is visible or not.
+ </summary>
+	<param name="sGroupName">Name of group.</param>
+	<param name="bVisible">TRUE for visible, FALSE for hidden.</param>
+	<returns>TRUE when visiblity successfully set.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SelectFirstItem">
+	<summary>
+ Selects first non-group-header item in item list.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SelectFirstItemFromGroup(QITA_OLTK.GIComboBoxGroupHeader)">
+	<summary>
+ Selects first item in given group.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SelectFirstItemFromGroup(System.String)">
+	<summary>
+ Selects first item in given group.
+ </summary>
+	<param name="sGroupName">Name of group.</param>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SelectNextItem">
+	<summary>
+ Selects next non-header item.
+ </summary>
+	<returns>Newly selected item index.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SelectPreviousItem">
+	<summary>
+ Selects previous non-header item.
+ </summary>
+	<returns>Newly selected item index.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.RemoveItem(QITA_OLTK.GIComboBoxItem@)">
+	<summary>
+ Removes given item.
+ </summary>
+	<param name="item">Item to remove.</param>
+	<returns>TRUE when item has been successfully removed.</returns>
+	<remarks>If ComboBoxGroupHeader class is passed as item, whole group is removed.</remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.RemoveItemByStoredObject(System.Object@)">
+	<summary>
+ Removes item whichs users stored object equals with passed parameter.
+ </summary>
+	<returns>TRUE when removed successfully, otherwise FALSE.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.RemoveGroup(System.String)">
+	<summary>
+ Removes whole group.
+ </summary>
+	<param name="sGroupName">Name of group to remove.</param>
+	<returns>TRUE when group has been successfully removed.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.RemoveGroup(QITA_OLTK.GIComboBoxGroupHeader@)">
+	<summary>
+ Removes whole group.
+ </summary>
+	<param name="groupHeaderItem">Group to remove.</param>
+	<returns>TRUE when group has been successfully removed.</returns>
+</member><member name="M:QITA_OLTK.ComboBoxEx.Clear">
+	<summary>
+ Removes all items and groups.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsItems(System.Comparison{QITA_OLTK.GIComboBoxItem})">
+	<summary>
+ Sorts all items in all groups by given comparer function.
+ </summary>
+	<param name="comparerFunction">Comparer function.</param>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsItems(System.String,System.Comparison{QITA_OLTK.GIComboBoxItem})">
+	<summary>
+ Sorts all items of given group by given comparer function.
+ </summary>
+	<param name="sGroupName">Name of group to be sorted.</param>
+	<param name="compareFunction">Comparer function.</param>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsItemsAscendByText(System.String)">
+	<summary>
+ Sorts all items of given group ascending by items Text.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsItemsDescByText(System.String)">
+	<summary>
+ Sorts all items of given group descending by items Text.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsItemsAscendByText">
+	<summary>
+ Sorts all items of all groups ascending by items Text.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsItemsDescByText">
+	<summary>
+ Sorts all items of all groups descending by items Text.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsAscendByText">
+	<summary>
+ Sorts groups by their header text: ascendent.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsDescendByText">
+	<summary>
+ Sorts groups by their header text: descendent.
+ </summary>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsAscendByItemsCount">
+	<summary>
+ Sorts groups by their items count: ascendent.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:QITA_OLTK.ComboBoxEx.SortGroupsDescByItemsCount">
+	<summary>
+ Sorts groups by their items count: descendent.
+ </summary>
+</member><member name="P:QITA_OLTK.GIComboBoxItem.Text">
+	<summary>
+ Gets or sets text of this item.
+ </summary>
+</member><member name="P:QITA_OLTK.GIComboBoxItem.Description">
+	<summary>
+ Gets or sets description of this item.
+ </summary>
+</member><member name="P:QITA_OLTK.GIComboBoxItem.GroupName">
+	<summary>
+ Gets name of group into which is item affiliated.
+ </summary>
+</member><member name="P:QITA_OLTK.GIComboBoxItem.Visible">
+	<summary>
+ Gets or sets whether this item is displayed or not.
+ </summary>
+</member><member name="P:QITA_OLTK.GIComboBoxItem.StoredObject">
+	<summary>
+ Gets or sets any stored object by user.
+ </summary>
+</member><member name="T:QITA_OLTK.GIComboBoxItem">
+	<summary>
+ Class used as a basic item for GIComboBox.
+ </summary>
+</member><member name="T:QITA_OLTK.GIComboBoxGroupHeader">
+	<summary>
+ Class used as a group head for GIComboBox.
+ </summary>
+</member><member name="P:QITA_OLTK.UCCreateNewText.DraftText">
+	<summary>
+ Text contained in Text Data.
+ </summary>
+</member><member name="M:QITA_OLTK.UCCreateNewText.LoadFile(System.String,System.Text.Encoding@)">
+	<summary>
+ Loads given file.
+ </summary>
+	<param name="sFile">Path to file.</param>
+	<param name="e">If set to NOTHING, encoding is detected.</param>
+	<returns>TRUE if succesfull.</returns>
+</member>
+</members>
+</doc>
