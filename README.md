@@ -1,11 +1,11 @@
 # QUITA -- Quantitative Index Text Analyzer (QITA) 2014
-The original deprecated (see warrants below!) desktop version of QUITA software as previously hosted at https://code.google.com/archive/p/oltk (turned off by Google: https://code.google.com/archive/).
+The original (see warrants below) desktop version of QUITA software as previously hosted at https://code.google.com/archive/p/oltk (this site cannot be edited since 2016 as it the platform is turned off by Google, links are broken, see https://code.google.com/archive/).
 
 ## Language and compiler
 VB.NET
 
 ## Help File & List of used formulas:
-All used formulas, examples and manual calculations:
+All used formulas, examples, manual calculations and formula references:
 
 http://www.ram-verlag.eu/books-e-books/studies-in-quantitative-linguistics/
 
@@ -14,8 +14,7 @@ Manual in Czech:
 https://theses.cz/id/fz87uj/thesis.pdf
 
 ## Warrants
-No warants for the code, the calculations and/or formulas are given! Based on the concemporary knowledge, some statistical tests may be deprecated and the default tokenizer may be unsuitable for some tasks as it is based on the .NET RegEx engine. From such a reason, the code is depreacted, please see online autoupdated tools with full description at:
-https://korpus.cz/quitaup/ and https://www.quitaonline.com/ .
+No warants for the code, the calculations and/or formulas are given. Use 'as is'. Based on the concemporary knowledge, some statistical tests, calculations may be deprecated and the default tokenizer may be unsuitable for some tasks as it is based on the .NET RegEx engine. 
 
 ## Older version
 Binaries for the older version 11.90 with an installer are downloadable from OSU website:
