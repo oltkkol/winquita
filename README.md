@@ -7,7 +7,7 @@ VB.NET
 ## Help File & List of used formulas:
 All used formulas, examples, manual calculations and formula references:
 
-http://www.ram-verlag.eu/books-e-books/studies-in-quantitative-linguistics/
+https://www.ram-verlag.eu/software-neu/quita-quantitative-index-text-analyzer/
 
 Manual in Czech:
 
