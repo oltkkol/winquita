@@ -21,7 +21,7 @@ https://kcj.osu.cz/wp-content/uploads/2017/08/2014_quita_poster.pdf (hosted at O
 Windows OS, .NET Framework 3.5, optionally: Python, Perl
 
 ## Warrants
-No warants for the code and/or the calculations and/or formulas are given. Use 'as is'. Based on the contemporary knowledge, some of the used statistical tests or calculations may be deprecated; the default tokenizer is based on the .NET RegEx engine.
+Use 'as is'. Based on the contemporary knowledge, some of the used statistical tests and-or calculations may be deprecated. The default tokenizer is based on the .NET RegEx engine which may be incompatible with some languages, linguistic approaches and-or theories.
 
 ## Binaries
 
