@@ -17,6 +17,9 @@ Poster from QUALICO Conference:
 
 https://kcj.osu.cz/wp-content/uploads/2017/08/2014_quita_poster.pdf (hosted at OSU website)
 
+## System Requirements
+Windows OS, .NET Framework 3.5, optionally: Python, Perl
+
 ## Warrants
 No warants for the code and/or the calculations and/or formulas are given. Use 'as is'. Based on the contemporary knowledge, some of the used statistical tests or calculations may be deprecated; the default tokenizer is based on the .NET RegEx engine.
 
