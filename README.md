@@ -26,6 +26,7 @@ No warants for the code and/or the calculations and/or formulas are given. Use '
 ## Binaries
 
 Installers available:
+
 http://kol.ff.upol.cz/software/QUITA_1_1_12.msi
 
 Older versions:
