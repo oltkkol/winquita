@@ -29,5 +29,7 @@ Installers available:
 http://kol.ff.upol.cz/software/QUITA_1_1_12.msi
 
 Older versions:
+
 http://kol.ff.upol.cz/software/QUITA_1_1_09.msi
+
 https://kcj.osu.cz/wp-content/uploads/2018/06/QUITA_Setup_1190.zip
