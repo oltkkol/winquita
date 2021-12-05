@@ -23,7 +23,11 @@ Windows OS, .NET Framework 3.5, optionally: Python, Perl
 ## Warrants
 No warants for the code and/or the calculations and/or formulas are given. Use 'as is'. Based on the contemporary knowledge, some of the used statistical tests or calculations may be deprecated; the default tokenizer is based on the .NET RegEx engine.
 
-## Older version
-Binaries for the older version 11.90 with an installer are downloadable from OSU website:
+## Binaries
 
-https://kcj.osu.cz/wp-content/uploads/2018/06/QUITA_Setup_1190.zip .
+Installers available:
+http://kol.ff.upol.cz/software/QUITA_1_1_12.msi
+
+Older versions:
+http://kol.ff.upol.cz/software/QUITA_1_1_09.msi
+https://kcj.osu.cz/wp-content/uploads/2018/06/QUITA_Setup_1190.zip
