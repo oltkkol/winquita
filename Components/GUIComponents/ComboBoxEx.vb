@@ -1,22 +1,6 @@
 ﻿Option Strict On
 Imports System.ComponentModel
 
-'!!!    THIS IS PAID AND COPYRIGHTED CODE, READ FUTHER PLEASE   !!!!!!!!!!!!!!!!!!!!!!!!!
-'   This code is licensed.
-'   Groups & Images ComboBox Extended (2013), version: 16.9.2013
-
-'
-'   LICENCE:
-'           You can: - modify this code,
-'                    - use this code in your software,
-'                    - compile this code and use binaries in your software.
-'
-'           You cannot: - sell, lend or distribute this source code,
-'                       - sell, lend or distribute derived component.
-'
-'   http://dotNetComponents.lodusweb.net
-'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 <Browsable(True), Serializable()> _
 Public Class ComboBoxEx
     Inherits ComboBox
